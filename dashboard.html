@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>لوحة التحكم – أسنان360</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f2f6fc;
+    }
+
+    .navbar {
+      background-color: #0077b6;
+    }
+
+    .navbar-brand {
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .card-welcome {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 15px rgba(0,0,0,0.08);
+    }
+
+    .section-title {
+      font-weight: bold;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- شريط التنقل -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <span class="navbar-brand">أسنان360</span>
+      <button class="btn btn-warning btn-sm text-dark" onclick="logout()">تسجيل الخروج</button>
+    </div>
+  </nav>
+
+  <!-- المحتوى -->
+  <div class="container my-5">
+    <div class="card-welcome text-center">
+      <h3>👋 مرحبًا بك في لوحتك الخاصة</h3>
+      <p class="text-muted">هنا ستجد أدواتك، دوراتك، وكل ما يخصك داخل المنصة</p>
+      <hr>
+      <div class="row mt-4">
+        <div class="col-md-6 mb-3">
+          <div class="border rounded p-3 h-100 bg-light">
+            <span class="section-title">📚 دوراتي</span>
+            <p>يمكنك قريبًا استعراض الدورات المسجّل فيها</p>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <div class="border rounded p-3 h-100 bg-light">
+            <span class="section-title">📊 إحصائياتي</span>
+            <p>سيظهر تقدمك ومستوى نشاطك هنا قريبًا</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function logout() {
+      alert("🚪 تم تسجيل الخروج!");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
