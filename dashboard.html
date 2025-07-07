@@ -34,7 +34,7 @@
 
     /* زر الوضع الداكن */
     .theme-toggle {
-      position: absolute;
+      position: fixed;
       top: 15px;
       left: 15px;
       background: #fff;
@@ -67,6 +67,16 @@
     body.dark .bg-light {
       background-color: #323d5c !important;
       color: #ddd;
+    }
+
+    body.dark h3,
+    body.dark .section-title,
+    body.dark p {
+      color: #f1f1f1 !important;
+    }
+
+    body.dark .text-muted {
+      color: #ccc !important;
     }
   </style>
 </head>
