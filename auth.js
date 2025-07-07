@@ -34,6 +34,11 @@ if (loginForm) {
 
     const msg = await res.text();
     alert(msg);
-    if (msg.includes('✅')) window.location.href = "index.html";
+    if (msg.includes('✅')) {
+      // 🆕 حفظ معلومات المستخدم بعد تسجيل الدخول
+      localStorage.setItem("asnan360-user", JSON.stringify({ email }));
+      
+      window.location.href = "index.html";
+    }
   });
 }
