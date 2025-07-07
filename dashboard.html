@@ -84,6 +84,12 @@
 </head>
 <body>
 
+  <!-- تحقق من الجلسة -->
+  <script>
+    const user = localStorage.getItem("asnan360-user");
+    if (!user) window.location.href = "login.html";
+  </script>
+
   <!-- شريط تنقل ثابت وأنيق -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
     <div class="container d-flex justify-content-between align-items-center">
@@ -120,6 +126,7 @@
 
   <script>
     function logout() {
+      localStorage.removeItem("asnan360-user"); // 🆕 حذف الجلسة عند تسجيل الخروج
       alert("🚪 تم تسجيل الخروج!");
       window.location.href = "login.html";
     }
