@@ -8,15 +8,23 @@
   <style>
     body {
       background-color: #f2f6fc;
+      padding-top: 56px; /* لإفساح مكان للشريط الثابت */
     }
 
     .navbar {
       background-color: #0077b6;
+      transition: background-color 0.3s ease;
+    }
+
+    body.dark .navbar {
+      background-color: #1c2541 !important;
     }
 
     .navbar-brand {
       color: #fff;
       font-weight: bold;
+      font-size: 1.2rem;
+      letter-spacing: 0.5px;
     }
 
     .card-welcome {
@@ -32,25 +40,19 @@
       margin-bottom: 1rem;
     }
 
-    /* زر الوضع الداكن */
     .theme-toggle {
-      position: fixed;
-      top: 15px;
-      left: 15px;
       background: #fff;
       color: #000;
       border: none;
-      padding: 6px 12px;
-      border-radius: 8px;
+      padding: 4px 10px;
+      border-radius: 6px;
       cursor: pointer;
-      font-weight: bold;
-      font-size: 18px;
-      z-index: 999;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      font-size: 16px;
+      margin-left: 8px;
     }
 
     body.dark .theme-toggle {
-      background: #333;
+      background: #444;
       color: #ffd60a;
     }
 
@@ -82,13 +84,14 @@
 </head>
 <body>
 
-  <button id="toggleTheme" class="theme-toggle">🌙</button>
-
-  <!-- شريط التنقل -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
-      <span class="navbar-brand">أسنان360</span>
-      <button class="btn btn-warning btn-sm text-dark" onclick="logout()">تسجيل الخروج</button>
+  <!-- شريط تنقل ثابت وأنيق -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a class="navbar-brand" href="dashboard.html">أسنان360</a>
+      <div>
+        <button id="toggleTheme" class="theme-toggle">🌙</button>
+        <button class="btn btn-warning btn-sm text-dark" onclick="logout()">تسجيل الخروج</button>
+      </div>
     </div>
   </nav>
 
