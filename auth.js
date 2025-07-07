@@ -35,10 +35,11 @@ if (loginForm) {
     const msg = await res.text();
     alert(msg);
     if (msg.includes('✅')) {
-      // 🆕 حفظ معلومات المستخدم بعد تسجيل الدخول
+      // ✅ حفظ بيانات المستخدم للجلسة
       localStorage.setItem("asnan360-user", JSON.stringify({ email }));
-      
-      window.location.href = "index.html";
+
+      // ✅ توجيه ناجح إلى لوحة التحكم
+      window.location.href = "dashboard.html";
     }
   });
 }
