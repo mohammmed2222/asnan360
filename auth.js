@@ -26,20 +26,38 @@ if (loginForm) {
     const email = loginForm.email.value.trim();
     const password = loginForm.password.value;
 
-    const res = await fetch('/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password })
-    });
+    try {
+      const res = await fetch('/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
 
-    const msg = await res.text();
-    alert(msg);
-    if (msg.includes('✅')) {
-      // ✅ حفظ بيانات المستخدم للجلسة
-      localStorage.setItem("asnan360-user", JSON.stringify({ email }));
+      if (res.ok) {
+        const data = await res.json();
+        alert(data.message);
 
-      // ✅ توجيه ناجح إلى لوحة التحكم
-      window.location.href = "dashboard.html";
+        // Redirect based on user role
+        switch (data.user.role) {
+          case 'admin':
+            window.location.href = 'admin.html';
+            break;
+          case 'teacher':
+            window.location.href = 'dashboard.html';
+            break;
+          case 'student':
+            window.location.href = 'index.html';
+            break;
+          default:
+            window.location.href = 'index.html';
+        }
+      } else {
+        const errorMsg = await res.text();
+        alert(`Login failed: ${errorMsg}`);
+      }
+    } catch (error) {
+      console.error('Login request failed:', error);
+      alert('An error occurred. Please try again.');
     }
   });
 }

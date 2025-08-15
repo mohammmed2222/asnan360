@@ -53,47 +53,89 @@
   <div class="container-fluid">
     <div class="row">
       
-      <!-- الشريط الجانبي -->
-      <div class="col-md-3 sidebar">
-        <h4>👨‍💼 مدير المنصة</h4>
-        <a href="#">👥 إدارة المستخدمين</a>
-        <a href="#">➕ إضافة دورة</a>
-        <a href="#">📈 تقارير المنصة</a>
+      <!-- Sidebar -->
+      <nav class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+        <h4>👨‍💼 لوحة التحكم</h4>
+        <a href="#" onclick="showSection('users')">👥 إدارة المستخدمين</a>
+        <a href="#" onclick="showSection('courses')">📚 إدارة الكورسات</a>
+        <a href="#" onclick="showSection('categories')">🗂️ إدارة الأقسام</a>
         <a href="#" onclick="logout()">🚪 تسجيل الخروج</a>
-      </div>
+      </nav>
 
-      <!-- المحتوى -->
-      <div class="col-md-9 admin-content">
-        <h3 class="mb-4">مرحبًا بك، مشرف أسنان360</h3>
+      <!-- Main Content -->
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 admin-content">
+        <h3 class="mb-4">مرحباً بك، أيها المدير</h3>
 
-        <div class="card-admin mb-4">
+        <!-- User Management Section -->
+        <div id="users-section" class="card-admin mb-4">
           <div class="section-title">👥 قائمة المستخدمين</div>
-          <p>سيتم جلب جميع المستخدمين من قاعدة البيانات هنا.</p>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Email</th>
+                  <th>Role</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="users-table-body">
+                <!-- User data will be injected here -->
+              </tbody>
+            </table>
+          </div>
         </div>
 
-        <div class="card-admin mb-4">
-          <div class="section-title">📚 الكورسات</div>
-          <p>عرض الكورسات الحالية + زر لإضافة دورة جديدة.</p>
+        <!-- Course Management Section -->
+        <div id="courses-section" class="card-admin mb-4" style="display:none;">
+          <div class="section-title">📚 قائمة الكورسات</div>
+           <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Title</th>
+                  <th>Teacher ID</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="courses-table-body">
+                <!-- Course data will be injected here -->
+              </tbody>
+            </table>
+          </div>
         </div>
 
-        <div class="card-admin">
-          <div class="section-title">📊 إحصائيات المنصة</div>
-          <ul>
-            <li>عدد المستخدمين المسجّلين: 52</li>
-            <li>عدد الدورات: 14</li>
-            <li>آخر دورة أضيفت: "الزرعات المتقدمة" – قبل 3 أيام</li>
-          </ul>
+        <!-- Category Management Section -->
+        <div id="categories-section" class="card-admin" style="display:none;">
+          <div class="section-title">🗂️ إدارة الأقسام</div>
+          <form id="add-category-form" class="mb-3">
+            <div class="input-group">
+              <input type="text" id="category-name" class="form-control" placeholder="اسم القسم الجديد" required>
+              <button type="submit" class="btn btn-primary">إضافة قسم</button>
+            </div>
+          </form>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="categories-table-body">
+                <!-- Category data will be injected here -->
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
+
+      </main>
 
     </div>
   </div>
 
-  <script>
-    function logout() {
-      alert("🚪 تم تسجيل الخروج من لوحة المدير");
-      window.location.href = "login.html";
-    }
-  </script>
+  <script src="admin.js"></script>
 </body>
 </html>
