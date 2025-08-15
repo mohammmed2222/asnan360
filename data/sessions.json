@@ -1,0 +1,18 @@
+{
+  "6da51e2e7d85320183b92c1d05677682a8c698ee0ed473ac2b95f74c30b2e592": {
+    "user": {
+      "id": 1,
+      "email": "admin@platform.com",
+      "role": "admin"
+    },
+    "expires": "2025-08-16T12:00:21.299Z"
+  },
+  "d8887fc3b254713adc6804acde3d61be2226e9aa3715f2816fe85ca425887766": {
+    "user": {
+      "id": 1,
+      "email": "admin@platform.com",
+      "role": "admin"
+    },
+    "expires": "2025-08-16T12:01:47.489Z"
+  }
+}

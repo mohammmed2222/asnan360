@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "email": "admin@platform.com",
+    "password": "2e394cc9c24d601fe120df54ebbb5306:31cabce052f3812703bb7e361ab45990ad297a47ebf21cfe2cf72ffe8ac274cc870cc35d5c6b44b5ee69e8bd13199402644467025877f8917e680251e45068be",
+    "role": "admin"
+  },
+  {
+    "id": 2,
+    "email": "teacher_1755259221@test.com",
+    "password": "dabf5db315535b4425fe1b0a5e35c959:827bce8c02a5aa49e36199c91c07306a49a4594943e02ef549b82aad74be5c2f4065f22ec3b9d78e4876091aaa8f5dcb890e8982640d9302ff2de79eccb9121c",
+    "role": "teacher"
+  },
+  {
+    "id": 3,
+    "email": "teacher_1755259307@test.com",
+    "password": "0f5a9d3ed5017acb57e059981dfb0206:30f31521c297ea73586606640a6a2c100fa8d7aed469a0be35ea961345f706983872358fa12d5a302cdb02ee7f71e6b9bed54500ad4c748021ec023232ce4f3d",
+    "role": "teacher"
+  }
+]

@@ -95,47 +95,45 @@
   </nav>
 
   <div class="container my-5">
-    <div class="card-welcome text-center">
-      <h3>👋 مرحبًا بك في لوحتك الخاصة</h3>
-      <p class="text-muted">هنا ستجد أدواتك، دوراتك، وكل ما يخصك داخل المنصة</p>
-      <hr>
-      <div class="row mt-4">
-        <div class="col-md-6 mb-3">
-          <div class="border rounded p-3 h-100 bg-light">
-            <span class="section-title">📚 دوراتي</span>
-            <p>يمكنك قريبًا استعراض الدورات المسجّل فيها</p>
+    <div class="card-welcome">
+      <h3 id="welcome-message" class="mb-4">👋 مرحبًا بك في لوحتك الخاصة</h3>
+
+      <!-- Add Course Form -->
+      <div class="mb-5">
+        <h4 class="section-title">➕ إضافة دورة جديدة</h4>
+        <form id="add-course-form">
+          <div class="mb-3">
+            <input type="text" id="course-title" class="form-control" placeholder="عنوان الدورة" required>
           </div>
-        </div>
-        <div class="col-md-6 mb-3">
-          <div class="border rounded p-3 h-100 bg-light">
-            <span class="section-title">📊 إحصائياتي</span>
-            <p>سيظهر تقدمك ومستوى نشاطك هنا قريبًا</p>
+          <div class="mb-3">
+            <textarea id="course-description" class="form-control" placeholder="وصف الدورة"></textarea>
           </div>
+          <button type="submit" class="btn btn-primary">إضافة الدورة</button>
+        </form>
+      </div>
+
+      <!-- My Courses List -->
+      <div>
+        <h4 class="section-title">📚 دوراتي الحالية</h4>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="courses-table-body">
+              <!-- Teacher's courses will be injected here -->
+            </tbody>
+          </table>
         </div>
       </div>
+
     </div>
   </div>
 
-  <script>
-    window.onload = () => {
-      const user = localStorage.getItem("asnan360-user");
-      if (!user) window.location.href = "login.html";
-    };
-
-    function logout() {
-      localStorage.removeItem("asnan360-user");
-      alert("🚪 تم تسجيل الخروج!");
-      window.location.href = "login.html";
-    }
-
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") document.body.classList.add("dark");
-
-    document.getElementById("toggleTheme").onclick = () => {
-      document.body.classList.toggle("dark");
-      const mode = document.body.classList.contains("dark") ? "dark" : "light";
-      localStorage.setItem("theme", mode);
-    };
-  </script>
+  <script src="teacher.js"></script>
 </body>
 </html>
